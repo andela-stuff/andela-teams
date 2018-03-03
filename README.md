@@ -20,28 +20,15 @@ The core server (backend) for this project is running [here](https://andela-team
 
 ## Technology Stack
 
-To see the technology stack utilized by this project checkout [Technology Stack](https://github.com/andela-stuff/andela-teams-core/wiki/Technology-Stack).
-
-## Third Party Integrations
-
-To see how this project integrates with third party APIs checkout [Third Party Integrations](https://github.com/andela-stuff/andela-teams-core/wiki/Third-Party-Integrations).
+To see the technology stack utilized by this project checkout [Technology Stack](https://github.com/andela-stuff/andela-teams/wiki/Technology-Stack).
 
 ## Usage
 
 ## Testing
 
-This project uses [Mocha](https://mochajs.org/), [Chai](http://chaijs.com/) and [Chai-Http](http://chaijs.com/plugins/chai-http/) for testing.
-* Ensure you run `yarn` (or `npm install`) to install necessary packages.
-* Run `npm test` to run tests and display code coverage results.
-* Run `npm test:dev` to just run tests.
-
-## API Docs
-
-The API docs can be found [here](https://andela-teams-core.herokuapp.com/).
-
 ## Contributing
 
-To see how to go about contributing to this project checkout [contributing](contributing.md).
+To see how to go about contributing to this project checkout [contributing](https://github.com/andela-stuff/andela-teams-core/blob/master/contributing.md).
 
 The Pivotal Tracker board for this project can be found [here](https://www.pivotaltracker.com/n/projects/2138610).
 
