@@ -20,11 +20,7 @@ The core server (backend) for this project is running [here](https://andela-team
 
 ## Technology Stack
 
-To see the technology stack utilized by this project checkout [Technology Stack](https://github.com/andela-stuff/andela-teams-core/wiki/Technology-Stack).
-
-## Third Party Integrations
-
-To see how this project integrates with third party APIs checkout [Third Party Integrations](https://github.com/andela-stuff/andela-teams-core/wiki/Third-Party-Integrations).
+To see the technology stack utilized by this project checkout [Technology Stack](https://github.com/andela-stuff/andela-teams/wiki/Technology-Stack).
 
 ## Usage
 
@@ -32,7 +28,7 @@ To see how this project integrates with third party APIs checkout [Third Party I
 
 ## Contributing
 
-To see how to go about contributing to this project checkout [contributing](contributing.md).
+To see how to go about contributing to this project checkout [contributing](https://github.com/andela-stuff/andela-teams-core/blob/master/contributing.md).
 
 The Pivotal Tracker board for this project can be found [here](https://www.pivotaltracker.com/n/projects/2138610).
 
