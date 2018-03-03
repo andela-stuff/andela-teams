@@ -30,15 +30,6 @@ To see how this project integrates with third party APIs checkout [Third Party I
 
 ## Testing
 
-This project uses [Mocha](https://mochajs.org/), [Chai](http://chaijs.com/) and [Chai-Http](http://chaijs.com/plugins/chai-http/) for testing.
-* Ensure you run `yarn` (or `npm install`) to install necessary packages.
-* Run `npm test` to run tests and display code coverage results.
-* Run `npm test:dev` to just run tests.
-
-## API Docs
-
-The API docs can be found [here](https://andela-teams-core.herokuapp.com/).
-
 ## Contributing
 
 To see how to go about contributing to this project checkout [contributing](contributing.md).
