@@ -2,6 +2,7 @@
 
 This is the web UI for [Andela Teams](https://andela-teams.herokuapp.com).
 
+[![Andela](https://andela-badge.herokuapp.com/)](https://andela.com)
 [![Heroku](https://heroku-badge.herokuapp.com/?app=andela-teams)](https://andela-teams.herokuapp.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
