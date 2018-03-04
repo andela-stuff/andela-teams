@@ -3,6 +3,7 @@
 This is the web UI for [Andela Teams](https://andela-teams.herokuapp.com).
 
 [![Andela](https://andela-badge.herokuapp.com/)](https://andela.com)
+[![Build Status](https://travis-ci.org/andela-stuff/andela-teams.svg?branch=master)](https://travis-ci.org/andela-stuff/andela-teams)
 [![Heroku](https://heroku-badge.herokuapp.com/?app=andela-teams)](https://andela-teams.herokuapp.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
