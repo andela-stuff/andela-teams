@@ -1,6 +1,8 @@
+import actionTypes from './actionTypes';
+
 export function addTeam(name) {
   return {
-    type: 'ADD_TEAM',
+    type: actionTypes.CREATE_TEAM,
     payload: {
       name
     }
