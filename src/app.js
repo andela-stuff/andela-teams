@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 
+import css from './assets/styles/app.scss';
 import TeamList from './components/TeamList.jsx';
 
 const dummyTeams = [
