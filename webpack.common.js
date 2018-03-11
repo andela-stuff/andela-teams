@@ -46,7 +46,7 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
-        test: /\.(tff|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader'
       },
       {
@@ -55,7 +55,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        loader: 'url-loader?limit=250000'
+        loader: 'url-loader?limit=500000'
       }
     ]
   },
