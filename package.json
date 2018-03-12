@@ -33,7 +33,7 @@
     "file-loader": "^1.1.11",
     "immutable": "^3.8.2",
     "keymirror": "^0.1.1",
-    "node-sass": "^4.8.0",
+    "node-sass": "^4.8.1",
     "nodemon": "^1.17.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
