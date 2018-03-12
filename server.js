@@ -3,11 +3,16 @@ var express = require('express');
 var webpack = require('webpack');
 var config = require('./webpack.dev');
 
-if (process.env.NODE_ENV === 'production') {
+const env = process.env.NODE_ENV || 'development';
+const port = parseInt(process.env.PORT, 10) || 8000;
+
+if (env === 'production') {
   config = require('./webpack.prod');
 }
 
 var app = express();
+app.set('port', port);
+
 var compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {
@@ -21,11 +26,6 @@ app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.listen(8000, function(err) {
-  if (err) {
-    console.log(err);
-    return;
-  }
+app.listen(port);
 
-  console.log('Listening at http://localhost:8000');
-});
+export default app;
