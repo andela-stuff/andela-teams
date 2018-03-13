@@ -13,7 +13,7 @@
     "build-and-start": "npm run build && npm start",
     "build-and-start:dev": "npm run build && npm run start:dev",
     "heroku-postbuild": "npm run build",
-    "start": "node --require babel-register server",
+    "start": "node --require babel-register server.js",
     "start:dev": "NODE_ENV=development nodemon --require babel-register server.js",
     "test": ""
   },

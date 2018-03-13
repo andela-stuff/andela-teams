@@ -17,6 +17,7 @@ module.exports = merge(common, {
       }
     },
     contentBase: path.join(__dirname, 'build'),
-    historyApiFallback: true
+    historyApiFallback: true,
+    hot: true
   }
 });
