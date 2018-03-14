@@ -15,7 +15,7 @@
     "heroku-postbuild": "npm run build",
     "start": "node --require babel-register server.js",
     "start:dev": "NODE_ENV=development nodemon --require babel-register server.js",
-    "test": " "
+    "test": ""
   },
   "repository": "https://github.com/andela-stuff/andela-teams",
   "author": "Franklin Chieze <chieze.franklin@gmail.com>",
