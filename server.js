@@ -23,10 +23,15 @@ app.use(require('webpack-dev-middleware')(compiler, {
 app.use(require('webpack-hot-middleware')(compiler));
 
 app.get('*', function(req, res) {
-  console.log(`>>>>>>>>>>>>>>>>>>>${path.join(__dirname, 'build', 'index.html')}`);
+  const { readdirSync, statSync } = require('fs')
+const { join } = require('path')
+
+const dirs = p => readdirSync(p).filter(f => statSync(join(p, f)).isDirectory())
+console.log(dirs(__dirname));
+
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.listen(port, function(){console.log(`>>>>>>>>>>>>>>>>>>>${port}`);});
+app.listen(port);
 
 // export default app;
