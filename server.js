@@ -23,11 +23,18 @@ app.use(require('webpack-dev-middleware')(compiler, {
 app.use(require('webpack-hot-middleware')(compiler));
 
 app.get('*', function(req, res) {
+  const fs = require('fs')
   const { readdirSync, statSync } = require('fs')
 const { join } = require('path')
 
 const dirs = p => readdirSync(p).filter(f => statSync(join(p, f)).isDirectory())
+console.log(__dirname);
 console.log(dirs(__dirname));
+fs.readdir('build', (err, files) => {
+  files.forEach(file => {
+    console.log(file);
+  });
+})
 
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
