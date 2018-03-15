@@ -22,21 +22,14 @@ app.use(require('webpack-dev-middleware')(compiler, {
 
 app.use(require('webpack-hot-middleware')(compiler));
 
-app.get('*', function(req, res) {
-  const fs = require('fs')
-  const { readdirSync, statSync } = require('fs')
-const { join } = require('path')
+app.get('/build/app.js', function(req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'app.js'));
+});
 
-const dirs = p => readdirSync(p).filter(f => statSync(join(p, f)).isDirectory())
-console.log(__dirname);
-console.log(dirs(__dirname));
-fs.readdir('build', (err, files) => {
-  files.forEach(file => {
-    console.log(file);
-  });
-})
+app.use(express.static(path.join(__dirname, 'build')));
 
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(port);
