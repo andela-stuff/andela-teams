@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Col from '../containers/react-flex-proto/Col.jsx';
-import Row from '../containers/react-flex-proto/Row.jsx';
+import Col from './react-flex-proto/Col.jsx';
+import Row from './react-flex-proto/Row.jsx';
 
 class Page extends React.Component {
 
