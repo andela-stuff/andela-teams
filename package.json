@@ -33,6 +33,7 @@
     "file-loader": "^1.1.11",
     "immutable": "^3.8.2",
     "keymirror": "^0.1.1",
+    "lodash": "^4.17.5",
     "node-sass": "^4.8.1",
     "nodemon": "^1.17.1",
     "prop-types": "^15.6.1",

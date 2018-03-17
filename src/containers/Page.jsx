@@ -6,6 +6,13 @@ import Row from '../containers/react-flex-proto/Row.jsx';
 
 class Page extends React.Component {
 
+  constructor(props){
+    super(props);
+
+    this.renderTitle = this.renderTitle.bind(this);
+    this.renderActionBar = this.renderActionBar.bind(this);
+  }
+
   renderTitle() {
     if (!this.props.title) {
       return null;
