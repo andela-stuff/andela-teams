@@ -12,6 +12,8 @@
     "build": "NODE_ENV=production webpack --config webpack.prod.js --progress",
     "build-and-start": "npm run build && npm start",
     "build-and-start:dev": "npm run build && npm run start:dev",
+    "eslint": "./node_modules/.bin/eslint src",
+    "eslint-fix": "./node_modules/.bin/eslint --fix src",
     "heroku-postbuild": "npm run build",
     "start": "node --require babel-register server.js",
     "start:dev": "NODE_ENV=development nodemon --require babel-register server.js",
@@ -55,5 +57,14 @@
     "webpack-hot-middleware": "^2.21.2",
     "webpack-merge": "^4.1.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "pre-commit": "^1.2.2"
+  }
 }

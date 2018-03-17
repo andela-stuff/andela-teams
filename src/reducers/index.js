@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import TeamReducer from './team';
 
 const reducers = combineReducers({
-    team: TeamReducer
+  team: TeamReducer
 });
 
 export default reducers;
