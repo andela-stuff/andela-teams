@@ -4794,7 +4794,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.6.0:
+prop-types@^15.6.0, prop-types@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:
@@ -4951,6 +4951,10 @@ react-dom@^16.2.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
+
+react-flex-proto@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-flex-proto/-/react-flex-proto-1.0.0.tgz#bab993bdae1e2dcb9f35839dce7835acd722b6b3"
 
 react-redux@^5.0.7:
   version "5.0.7"
