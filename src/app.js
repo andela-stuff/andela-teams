@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom'
 
 import css from './assets/styles/app.scss';
 import TeamList from './components/TeamList.jsx';
