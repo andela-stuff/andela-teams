@@ -102,7 +102,7 @@ class PageTop extends React.Component {
     }
 
     onLogout() {
-        //eventBus.emit('logout');***********************************
+        //eventBus.emit('logout');**********************************
     }
   
     onToggleMenu() {
