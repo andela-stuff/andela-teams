@@ -1,2 +1,7 @@
-export * from './Col.jsx';
-export * from './Row.jsx';
+import Col from './Col.jsx';
+import Row from './Row.jsx';
+
+export default {
+  Col,
+  Row
+};

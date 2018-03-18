@@ -1,8 +1,22 @@
+/**
+ * @fileOverview Layout component
+ *
+ * @author Franklin Chieze
+ *
+ * @requires NPM:react
+ * @requires ../components/PageTop.jsx
+ * @requires ../components/Sidebar.jsx
+ */
+
 import React from 'react';
 
 import PageTop from '../components/PageTop.jsx';
 import Sidebar from '../components/Sidebar.jsx';
 
+/**
+* Layout component
+* @class Layout
+*/
 class Layout extends React.Component {
     constructor(props) {
         super(props);

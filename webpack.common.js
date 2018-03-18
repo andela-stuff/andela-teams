@@ -1,15 +1,7 @@
 const Dotenv = require('dotenv-webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
-
-/*const nodeModules = {};
-fs.readdirSync('node_modules')
-  .filter(x => ['.bin'].indexOf(x) === -1)
-  .forEach((mod) => {
-    nodeModules[mod] = `commonjs ${mod}`;
-  });*/
 
 module.exports = {
   entry: './src/app.js',
@@ -38,7 +30,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: [ 'es2015', 'react' ]
+          presets: ['es2015', 'react', 'stage-2']
         }
       },
       {
