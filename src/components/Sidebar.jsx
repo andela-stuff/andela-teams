@@ -1,11 +1,22 @@
+/**
+ * @fileOverview Sidebar component
+ *
+ * @author Franklin Chieze
+ *
+ * @requires NPM:lodash
+ * @requires NPM:prop-types
+ * @requires NPM:react
+ * @requires NPM:react-router-dom
+ */
+
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 /**
-* Page component
-* @class Page
+* Sidebar component
+* @class Sidebar
 */
 class Sidebar extends React.Component {
   /**
