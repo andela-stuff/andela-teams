@@ -20,14 +20,23 @@ import Row from './react-flex-proto/Row.jsx';
 * @class Page
 */
 class Page extends React.Component {
-
-  constructor(props){
+  /**
+   * @constructor
+   *
+   * @param { object } props the component's props object
+  */
+  constructor(props) {
     super(props);
 
     this.renderTitle = this.renderTitle.bind(this);
     this.renderActionBar = this.renderActionBar.bind(this);
   }
 
+  /**
+   * @method renderTitle
+   *
+   * @returns { node } JSX
+   */
   renderTitle() {
     if (!this.props.title) {
       return null;
@@ -35,23 +44,33 @@ class Page extends React.Component {
 
     return (
       <Col padding={0}>
-        <h1 className='al-title'>{this.props.title}</h1>
+        <h1 className="al-title">{this.props.title}</h1>
       </Col>
     );
   }
 
+  /**
+   * @method renderActionBar
+   *
+   * @returns { node } JSX
+   */
   renderActionBar() {
-    if (! this.props.actionBar) {
+    if (!this.props.actionBar) {
       return null;
     }
 
     return (
-      <Col align='right'>
+      <Col align="right">
         {this.props.actionBar}
       </Col>
     );
   }
 
+  /**
+   * @method render
+   *
+   * @returns { node } JSX
+   */
   render() {
     return (
       <div>
@@ -67,9 +86,16 @@ class Page extends React.Component {
   }
 }
 
+Page.defaultProps = {
+  actionBar: <div />,
+  children: <div />,
+  title: ''
+};
+
 Page.propTypes = {
-  title: PropTypes.string,
   actionBar: PropTypes.node,
+  children: PropTypes.node,
+  title: PropTypes.string,
 };
 
 export default Page;
