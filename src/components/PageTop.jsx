@@ -1,4 +1,4 @@
-// eslint-disable-file no-unused-vars
+/* eslint no-unused-vars: 0 */
 
 /**
  * @fileOverview PageTop component
