@@ -1,3 +1,5 @@
+// eslint-disable-file no-unused-vars
+
 /**
  * @fileOverview PageTop component
  *
@@ -19,13 +21,14 @@ import _, { noop } from 'lodash';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { MessagesAlert, MessagesAlertContainer, NotificationsAlert, NotificationAlert } from 'react-blur-admin';
 import { Link } from 'react-router-dom';
 
 import Person from '../assets/img/person.svg';
 
 import Col from '../containers/react-flex-proto/Col.jsx';
 import Row from '../containers/react-flex-proto/Row.jsx';
-import eventBus from '../lib/EventBus';
+// import eventBus from '../lib/EventBus';
 import SearchBar from './SearchBar.jsx';
 
 /**
@@ -121,6 +124,11 @@ class PageTop extends React.Component {
     this.onLogout = this.onLogout.bind(this);
     this.onToggleMenu = this.onToggleMenu.bind(this);
     this.renderLogo = this.renderLogo.bind(this);
+    this.renderHamburgerMenu = this.renderHamburgerMenu.bind(this);
+    this.renderSearch = this.renderSearch.bind(this);
+    this.renderMessages = this.renderMessages.bind(this);
+    this.renderNotifications = this.renderNotifications.bind(this);
+    this.renderUserSection = this.renderUserSection.bind(this);
   }
 
   /**
@@ -137,7 +145,7 @@ class PageTop extends React.Component {
    * @returns { undefined } undefined
    */
   onLogout() {
-    eventBus.emit('logout');
+    // eventBus.emit('logout');
   }
 
   /**
@@ -191,6 +199,75 @@ class PageTop extends React.Component {
   }
 
   /**
+   * @method renderMessages
+   *
+   * @returns { node } JSX
+   */
+  renderMessages() {
+    const message = _.assign({}, this.state.messages);
+    return _.map(message, (messages, index) =>
+      <MessagesAlert {...messages} key={index} />);
+  }
+
+  /**
+   * @method renderNotifications
+   *
+   * @returns { node } JSX
+   */
+  renderNotifications() {
+    const notifications = _.assign({}, this.state.notifications);
+    return _.map(notifications, (notification, index) =>
+      <NotificationAlert {...notification} key={index} />);
+  }
+
+  /**
+   * @method renderUserSection
+   *
+   * @returns { node } JSX
+   */
+  renderUserSection() {
+    return (
+      <div className="user-profile clearfix">
+        <div className={`al-user-profile dropdown ${this.state.isMenuOpen ? 'open' : ''}`}>
+          <a className="profile-toggle-link dropdown-toggle" onClick={this.onToggleMenu}>
+            <img src={this.props.user && this.props.user.picture ? this.props.user.picture : Person} alt="" />
+          </a>
+          <ul className="top-dropdown-menu profile-dropdown dropdown-menu">
+            <li><i className="dropdown-arr" /></li>
+            <li><Link to="/"><i className="fa fa-user" />Profile</Link></li>
+            <li><Link to="/'"><i className="fa fa-cog" />Settings</Link></li>
+            <li>
+              <a href={this.props.location.pathname} className="signout" onClick={e => this.onLogout()}>
+                <i className="fa fa-power-off" />Sign out
+              </a>
+            </li>
+          </ul>
+        </div>
+        <Row>
+          <Col padding="5px 2px">
+            <MessagesAlertContainer
+              mailCount={this.state.messages.length}
+              markAllAsReadOnClick={noop}
+              allMessagesOnClick={noop}
+              settingsOnClick={noop}
+            >
+              {this.renderMessages()}
+            </MessagesAlertContainer>
+            <NotificationsAlert
+              notificationCount={this.state.notifications.length}
+              markAllAsReadOnClick={noop}
+              allNotificationsOnClick={noop}
+              settingsOnClick={noop}
+            >
+              {this.renderNotifications()}
+            </NotificationsAlert>
+          </Col>
+        </Row>
+      </div>
+    );
+  }
+
+  /**
    * @method render
    * @desc render method
    *
@@ -202,6 +279,7 @@ class PageTop extends React.Component {
         {this.renderLogo()}
         {this.renderHamburgerMenu()}
         {this.renderSearch()}
+        {this.renderUserSection()}
       </div>
     );
   }
@@ -209,18 +287,18 @@ class PageTop extends React.Component {
 
 PageTop.defaultProps = {
   location: { pathname: '/', query: {} },
-  user: {}
+  user: { name: 'user', picture: 'picture' }
 };
 
 PageTop.propTypes = {
-    location: PropTypes.shape({
-      pathname: PropTypes.string.isRequired,
-      query: PropTypes.object.isRequired,
-    }),
-    user: PropTypes.shape({
-      pathname: PropTypes.string.isRequired,
-      query: PropTypes.object.isRequired,
-    })
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+    query: PropTypes.object.isRequired,
+  }),
+  user: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    picture: PropTypes.string.isRequired,
+  })
 };
 
 export default PageTop;

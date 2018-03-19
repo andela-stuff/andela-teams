@@ -46,6 +46,7 @@
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-autosuggest": "^9.3.4",
+    "react-blur-admin": "^0.11.1",
     "react-dom": "^16.2.0",
     "react-flex-proto": "^1.0.0",
     "react-redux": "^5.0.7",
