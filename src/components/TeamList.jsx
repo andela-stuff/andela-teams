@@ -1,13 +1,24 @@
+/**
+ * @fileOverview TeamList component
+ *
+ * @author Franklin Chieze
+ *
+ * @requires NPM:prop-types
+ * @requires NPM:react
+ * @requires ./Team.jsx
+ */
+
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import Team from './Team.jsx';
 
-export default function TeamList(props) {
+const TeamList = (props) => {
   const { teams } = props;
 
   return (
     <div>
-      <input type='text' placeholder='Add todo' />
+      <input type="text" placeholder="Add todo" />
       <ul>
         {teams.map(t => (
           <li key={t.id}>
@@ -17,4 +28,14 @@ export default function TeamList(props) {
       </ul>
     </div>
   );
-}
+};
+
+TeamList.defaultProps = {
+  teams: []
+};
+
+TeamList.propTypes = {
+  teams: PropTypes.arrayOf(PropTypes.object)
+};
+
+export default TeamList;
