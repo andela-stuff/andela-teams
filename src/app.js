@@ -1,18 +1,32 @@
+/**
+ * @fileOverview Application's client entry point
+ *
+ * @author Franklin Chieze
+ *
+ * @requires NPM:react
+ * @requires NPM:react-dom
+ * @requires NPM:react-redux
+ * @requires NPM:react-router-dom
+ * @requires ./assets/styles/app.scss
+ * @requires ./containers/App.jsx
+ * @requires ./store
+ */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
+// eslint-disable-next-line no-unused-vars
 import css from './assets/styles/app.scss';
-import TeamList from './components/TeamList.jsx';
-
-const dummyTeams = [
-  { id: 0, name: 'make components' },
-  { id: 1, name: 'design actions' },
-  { id: 2, name: 'implement reducer' },
-  { id: 3, name: 'connect components' }
-];
+import App from './containers/App.jsx';
+import store from './store';
 
 ReactDOM.render(
-  <TeamList teams={dummyTeams} />,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('app')
 );
