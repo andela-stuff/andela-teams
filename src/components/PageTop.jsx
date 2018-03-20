@@ -21,7 +21,6 @@ import _, { noop } from 'lodash';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { MessagesAlert, MessagesAlertContainer, NotificationsAlert, NotificationAlert } from 'react-blur-admin';
 import { Link } from 'react-router-dom';
 
 import Person from '../assets/img/person.svg';
@@ -29,6 +28,10 @@ import Person from '../assets/img/person.svg';
 import Col from '../containers/react-flex-proto/Col.jsx';
 import Row from '../containers/react-flex-proto/Row.jsx';
 // import eventBus from '../lib/EventBus';
+import MessagesAlert from './react-blur-admin/MessageAlert.jsx';
+import MessagesAlertContainer from './react-blur-admin/MessagesAlertContainer.jsx';
+import NotificationAlert from './react-blur-admin/NotificationAlert.jsx';
+import NotificationsAlert from './react-blur-admin/NotificationsAlert.jsx';
 import SearchBar from './SearchBar.jsx';
 
 /**
