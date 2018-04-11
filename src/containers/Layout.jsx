@@ -8,6 +8,8 @@
  * @requires NPM:react
  * @requires ../components/PageTop.jsx
  * @requires ../components/Sidebar.jsx
+ *
+ * https://github.com/knledg/react-webpack-skeleton/blob/cdb8ca91ddfbeca0c69a5a8b0294bfe5a04db2d9/src/layout/app.js
  */
 
 import _ from 'lodash';
@@ -48,16 +50,8 @@ class Layout extends React.Component {
    * @returns { object } response
    */
   componentWillMount() {
-    this.setState({idToken: this.getIdToken()});
+    this.setState({ idToken: this.getIdToken() });
   }
-  /* componentWillMount() {
-    if (process.env.AUTH0_PUB_KEY) {
-      this.lock = new Auth0Lock(process.env.AUTH0_PUB_KEY, process.env.AUTH0_DOMAIN);
-      this.setState({idToken: this.getIdToken()}); // Must come after this.lock init
-    }
-
-    eventBus.on('logout', () => this.onLogout());
-  } */
 
   /**
    * @method render
