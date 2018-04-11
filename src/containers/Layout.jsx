@@ -48,13 +48,16 @@ class Layout extends React.Component {
    * @returns { object } response
    */
   componentWillMount() {
-    /* if (process.env.AUTH0_PUB_KEY) {
+    this.setState({idToken: this.getIdToken()});
+  }
+  /* componentWillMount() {
+    if (process.env.AUTH0_PUB_KEY) {
       this.lock = new Auth0Lock(process.env.AUTH0_PUB_KEY, process.env.AUTH0_DOMAIN);
       this.setState({idToken: this.getIdToken()}); // Must come after this.lock init
-    } */
+    }
 
-    // eventBus.on('logout', () => this.onLogout());
-  }
+    eventBus.on('logout', () => this.onLogout());
+  } */
 
   /**
    * @method render
