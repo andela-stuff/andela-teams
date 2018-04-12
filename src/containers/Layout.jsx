@@ -41,16 +41,75 @@ class Layout extends React.Component {
   }
 
   /**
-   * @method create
-   * @desc This method creates a new team
+   * @method componentWillMount
    *
-   * @param { object} req request
-   * @param { object} res response
-   *
-   * @returns { object } response
+   * @returns { unknown } unknown
    */
   componentWillMount() {
     this.setState({ idToken: this.getIdToken() });
+  }
+
+  /**
+   * @method componentDidMount
+   *
+   * @returns { unknown } unknown
+   */
+  componentDidMount() {
+    if (!this.state.idToken) {
+      return this.redirectToLogin();
+    }
+    return this.setUser();
+  }
+
+  /**
+   * @method onLogout
+   *
+   * @returns { unknown } unknown
+   */
+  onLogout() {
+    localStorage.removeItem('userToken');
+    this.setState({ idToken: null, user: null });
+    return this.redirectToLogin();
+  }
+
+  /**
+   * @method setUser
+   *
+   * @returns { unknown } unknown
+   */
+  setUser() {
+    if (!this.state.idToken) {
+      return null;
+    }
+
+    // TODO: get user using idToken
+    const user = {};
+    return this.setState({ user });
+  }
+
+  /**
+   * @method getIdToken
+   *
+   * @returns { unknown } unknown
+   */
+  getIdToken() {
+    const idToken = localStorage.getItem('userToken');
+    if (!idToken) {
+      return this.onLogout();
+    }
+    return idToken;
+  }
+
+  /**
+   * @method redirectToLogin
+   *
+   * @returns { unknown } unknown
+   */
+  redirectToLogin() {
+    this.props.router.push({
+      pathname: '/login',
+      query: { redirectUri: encodeURIComponent(this.props.location.pathname) },
+    });
   }
 
   /**
@@ -87,7 +146,7 @@ class Layout extends React.Component {
 
 Layout.defaultProps = {
   location: { pathname: '/', query: {} },
-  router: { pathname: '/', query: {} }
+  router: { pathname: '/', push: () => {}, query: {} }
 };
 
 Layout.propTypes = {
@@ -97,6 +156,7 @@ Layout.propTypes = {
   }),
   router: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
+    push: PropTypes.func,
     query: PropTypes.object.isRequired,
   })
 };
