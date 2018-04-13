@@ -128,7 +128,7 @@ class Layout extends React.Component {
           <div className="al-main">
             <div className="al-content">
               {
-                /* React.cloneElement(
+                /* React.cloneElement( 
                   this.props.children,
                   _.assign({}, this.props, { user: this.state.user })
                 ) */
