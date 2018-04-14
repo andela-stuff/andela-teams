@@ -30,3 +30,13 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('app')
 );
+
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    window.localStorage.test = 'You appear to be unable to write to localStorage';
+  } catch (e) {
+    document.body.innerHTML = `
+    <div class="mobile-incompatibility">
+    `;
+  }
+});
