@@ -22,14 +22,21 @@ import css from './assets/styles/app.scss';
 import App from './containers/App.jsx';
 import store from './store';
 
-ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>,
-  document.getElementById('app')
-);
+/**
+ * @method init
+ *
+ * @returns { unknown } unknown
+ */
+function init() {
+  ReactDOM.render(
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>,
+    document.getElementById('app')
+  );
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   try {
@@ -37,6 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch (e) {
     document.body.innerHTML = `
     <div class="mobile-incompatibility">
+    <h4>Your browser is not able to write to local storage.</h4>
+    <p>If you are using private mode please disable it.</p>
+    <p>Otherwise your browser is not supported or you have local storage turned off in your browser preferences.</p>
+    </div>
     `;
   }
+  init();
 });
