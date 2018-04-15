@@ -15,7 +15,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { browserHistory, BrowserRouter, Route, Switch } from 'react-router-dom';
 // Initializing touch events
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -35,7 +35,7 @@ injectTapEventPlugin();
 function init() {
   ReactDOM.render(
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter history={browserHistory}>
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="*" component={App} />

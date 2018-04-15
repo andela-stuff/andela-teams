@@ -5,15 +5,15 @@
  *
  * @requires NPM:prop-types
  * @requires NPM:react
- * @requires ./react-flex-proto/Col.jsx
- * @requires ./react-flex-proto/Row.jsx
+ * @requires ../lib/react-flex-proto/Col.jsx
+ * @requires ../lib/react-flex-proto/Row.jsx
  */
 
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Col from './react-flex-proto/Col.jsx';
-import Row from './react-flex-proto/Row.jsx';
+import Col from '../lib/react-flex-proto/Col.jsx';
+import Row from '../lib/react-flex-proto/Row.jsx';
 
 /**
 * Page component

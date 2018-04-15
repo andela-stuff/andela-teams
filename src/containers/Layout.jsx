@@ -15,11 +15,13 @@
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 import Footer from '../components/Footer.jsx';
 import PageTop from '../components/PageTop.jsx';
 import Sidebar from '../components/Sidebar.jsx';
 // import eventBus from '../lib/EventBus';
+import Teams from '../pages/Teams.jsx';
 
 /**
 * Layout component
@@ -106,7 +108,8 @@ class Layout extends React.Component {
    * @returns { unknown } unknown
    */
   redirectToLogin() {
-    this.props.router.push({
+    console.log(this.props.router);
+    this.props.router.history.push({
       pathname: '/login',
       query: { redirectUri: encodeURIComponent(this.props.location.pathname) },
     });
@@ -127,12 +130,26 @@ class Layout extends React.Component {
 
           <div className="al-main">
             <div className="al-content">
-              {
-                /* React.cloneElement(
-                  this.props.children,
-                  _.assign({}, this.props, { user: this.state.user })
-                ) */
-              }
+              <Switch>
+                <Route
+                  path="/teams"
+                  render={
+                    props => (React.cloneElement(<Teams />, { ...props, ...this.props }))
+                  }
+                />
+                <Route
+                  path="/pr"
+                  render={
+                    props => (React.cloneElement(<Teams />, { ...props, ...this.props }))
+                  }
+                />
+                <Route
+                  path="*"
+                  render={
+                    props => (React.cloneElement(<Teams />, { ...props, ...this.props }))
+                  }
+                />
+              </Switch>
             </div>
           </div>
 
@@ -146,7 +163,7 @@ class Layout extends React.Component {
 
 Layout.defaultProps = {
   location: { pathname: '/', query: {} },
-  router: { pathname: '/', push: () => {}, query: {} }
+  router: { pathname: '/', query: {} }
 };
 
 Layout.propTypes = {
@@ -156,7 +173,7 @@ Layout.propTypes = {
   }),
   router: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
-    push: PropTypes.func,
+    history: PropTypes.object,
     query: PropTypes.object.isRequired,
   })
 };

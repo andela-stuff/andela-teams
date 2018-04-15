@@ -116,7 +116,6 @@ Login.propTypes = {
   }),
   router: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
-    push: PropTypes.func,
     query: PropTypes.object.isRequired,
     replace: PropTypes.func,
   })
