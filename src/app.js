@@ -38,7 +38,7 @@ function init() {
       <BrowserRouter>
         <Switch>
           <Route path="/login" component={Login} />
-          <Route component={App} />
+          <Route path="*" component={App} />
         </Switch>
       </BrowserRouter>
     </Provider>,
