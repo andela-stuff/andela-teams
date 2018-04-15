@@ -16,11 +16,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+// Initializing touch events
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import './assets/styles/app.scss';
 import './lib/react-flex-proto/styles/flex.css';
 import App from './containers/App.jsx';
 import store from './store';
+
+injectTapEventPlugin();
 
 /**
  * @method init
