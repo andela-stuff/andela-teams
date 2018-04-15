@@ -37,7 +37,7 @@ class Sidebar extends React.Component {
         { pathname: '/modal-demo', label: 'Modals', icon: 'clipboard' },
         { pathname: '/tabs-demo', label: 'Tabs', icon: 'list-ul' },
         { pathname: '/input-demo', label: 'Inputs', icon: 'check-square' },
-        { pathname: '/notifications-demo', label: 'Notifications', icon: 'exclamation' },
+        { pathname: '/login', label: 'Notifications', icon: 'exclamation' },
       ],
     };
 

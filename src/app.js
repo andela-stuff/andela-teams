@@ -15,13 +15,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // Initializing touch events
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import './assets/styles/app.scss';
 import './lib/react-flex-proto/styles/flex.css';
 import App from './containers/App.jsx';
+import Login from './containers/Login.jsx';
 import store from './store';
 
 injectTapEventPlugin();
@@ -35,7 +36,10 @@ function init() {
   ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route component={App} />
+        </Switch>
       </BrowserRouter>
     </Provider>,
     document.getElementById('app')
