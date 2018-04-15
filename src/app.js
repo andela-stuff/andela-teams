@@ -22,7 +22,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import './assets/styles/app.scss';
 import './lib/react-flex-proto/styles/flex.css';
 import App from './containers/App.jsx';
-import Login from './containers/Login.jsx';
+import Login from './pages/Login.jsx';
 import store from './store';
 
 injectTapEventPlugin();
