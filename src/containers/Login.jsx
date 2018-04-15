@@ -82,7 +82,22 @@ class Login extends React.Component {
       return null;
     }
 
-    return <main className="auth-main">Login Page</main>;
+    return (
+      <main className="auth-main">
+        <div className="auth-block">
+          <h1>Sign in to Andela Teams</h1>
+
+          <form className="form-horizontal">
+            <div className="form-group">
+              <div className="col-sm-offset-2 col-sm-10">
+                <button type="submit" className="btn btn-default btn-auth">
+                Sign in with your Andela GMail Account
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>);
   }
 }
 
