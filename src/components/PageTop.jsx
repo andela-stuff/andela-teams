@@ -11,9 +11,13 @@
  * @requires NPM:react
  * @requires NPM:react-router-dom
  * @requires ../assets/img/person.svg
- * @requires ../containers/react-flex-proto/Col.jsx
- * @requires ../containers/react-flex-proto/Row.jsx
  * @requires ../lib/EventBus
+ * @requires ../lib/react-blur-admin/MessageAlert.jsx
+ * @requires ../lib/react-blur-admin/MessagesAlertContainer.jsx
+ * @requires ../lib/react-blur-admin/NotificationAlert.jsx
+ * @requires ../lib/react-blur-admin/NotificationsAlert.jsx
+ * @requires ../lib/react-flex-proto/Col.jsx
+ * @requires ../lib/react-flex-proto/Row.jsx
  * @requires ./SearchBar.jsx
  */
 
@@ -25,13 +29,13 @@ import { Link } from 'react-router-dom';
 
 import Person from '../assets/img/person.svg';
 
-import Col from '../containers/react-flex-proto/Col.jsx';
-import Row from '../containers/react-flex-proto/Row.jsx';
 // import eventBus from '../lib/EventBus';
-import MessagesAlert from './react-blur-admin/MessageAlert.jsx';
-import MessagesAlertContainer from './react-blur-admin/MessagesAlertContainer.jsx';
-import NotificationAlert from './react-blur-admin/NotificationAlert.jsx';
-import NotificationsAlert from './react-blur-admin/NotificationsAlert.jsx';
+import MessagesAlert from '../lib/react-blur-admin/MessageAlert.jsx';
+import MessagesAlertContainer from '../lib/react-blur-admin/MessagesAlertContainer.jsx';
+import NotificationAlert from '../lib/react-blur-admin/NotificationAlert.jsx';
+import NotificationsAlert from '../lib/react-blur-admin/NotificationsAlert.jsx';
+import Col from '../lib/react-flex-proto/Col.jsx';
+import Row from '../lib/react-flex-proto/Row.jsx';
 import SearchBar from './SearchBar.jsx';
 
 /**

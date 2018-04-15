@@ -5,15 +5,15 @@
  *
  * @requires NPM:react
  * @requires NPM:react-autosuggest
- * @requires ../containers/react-flex-proto/Col.jsx
- * @requires ../containers/react-flex-proto/Row.jsx
+ * @requires ../lib/react-flex-proto/Col.jsx
+ * @requires ../lib/react-flex-proto/Row.jsx
  */
 
 import React from 'react';
 import Autosuggest from 'react-autosuggest';
 
-import Col from '../containers/react-flex-proto/Col.jsx';
-import Row from '../containers/react-flex-proto/Row.jsx';
+import Col from '../lib/react-flex-proto/Col.jsx';
+import Row from '../lib/react-flex-proto/Row.jsx';
 
 const suggestionExamples = [
   {
