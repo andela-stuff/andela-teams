@@ -17,8 +17,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
-// eslint-disable-next-line no-unused-vars
-import css from './assets/styles/app.scss';
+import './assets/styles/app.scss';
+import './lib/react-flex-proto/styles/flex.css';
 import App from './containers/App.jsx';
 import store from './store';
 
