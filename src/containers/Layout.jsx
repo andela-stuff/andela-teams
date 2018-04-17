@@ -108,7 +108,7 @@ class Layout extends React.Component {
    * @returns { unknown } unknown
    */
   redirectToLogin() {
-    // console.log(this.props.router);
+    console.log(this.props.router);
     this.props.router.history.push({
       pathname: '/login',
       query: { redirectUri: encodeURIComponent(this.props.location.pathname) },
